@@ -1,0 +1,33 @@
+<p>Proceso de Verificacion</p>
+
+<div class="col-lg-6 col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Caso de Corrupcion {{nroCasoCorrupcion}}</div>
+        <div class="panel-body">
+          <canvas class="chart chart-line" chart-data="data" chart-series="series" chart-options="options"></canvas>
+        </div>
+      </div>
+    </div>
+
+<div class="col-lg-12 col-sm-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">Caso de Corrupcion {{nroCasoCorrupcion}}</div>
+    <div class="panel-body">
+      <canvas id="line2" class="chart chart-line" chart-data="velocidades"
+              chart-labels="labels" chart-series="series2" chart-options="opciones"
+              chart-dataset-override="datasetOverride" chart-click="onClick">
+      </canvas>
+      <!--<canvas class="chart chart-line" chart-data="velocidades" chart-options="opciones"></canvas>-->
+    </div>
+  </div>
+</div>
+
+<!--
+<div class="col-lg-12 col-sm-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">Caso de Mapas {{nroCasoCorrupcion}}</div>
+    <div class="panel-body">
+      <div id="map" class="map"></div>
+    </div>
+  </div>
+</div>-->
