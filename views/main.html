@@ -1,12 +1,11 @@
 <div class="jumbotron">
   <h1>Procesos Penales</h1>
   <p class="lead">
-    
     Seguimiento de Actos Procesales Penales Por Delitos De Corrupcion.
   </p>
   <p>
-    <a class="btn btn-lg btn-success" ng-href="#!/registro">
-    <!--<a class="btn btn-lg btn-success" ng-click="llamarAgente()">-->
+    <a class="btn btn-lg btn-success" 
+       ng-href="#!/registro">
       Ingresar
       <span class="glyphicon glyphicon-ok"></span>
     </a>
@@ -24,5 +23,26 @@
   <p>
     Listado de Casos Reportados.
   </p>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <button type="button" class="btn btn-default" ng-click="llamarAgente()">Llamar Agente Resolutor Cierre</button>
+    </div>
 
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="panel-body">
+          <pre>
+            {{datos | json}}
+          </pre>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="panel-body">
+          <pre>
+            {{respuesta | json}}
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

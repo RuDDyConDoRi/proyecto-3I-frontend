@@ -5,29 +5,18 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="styles/ol.css">-->
     <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
   </head>
   <body ng-app="frontendApp">
-    <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <!-- Add your site or application content here -->
     <div class="">
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
           <div class="navbar-header">
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+            <button type="button" class="navbar-toggle collapsed" 
+                    data-toggle="collapse" 
+                    data-target="#js-navbar-collapse">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -36,9 +25,7 @@
 
             <a class="navbar-brand" href="#/">Proyecto</a>
           </div>
-
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
             <ul class="nav navbar-nav">
               <li><a ng-href="#!/registro">Listado De Casos</a></li>
               <li><a ng-href="#!/verificacion">Otras Opciones</a></li>
@@ -54,47 +41,31 @@
 
     <div class="footer">
       <div class="container">
-        <p><span class="glyphicon glyphicon-book"></span> Carrera De Informatica</p>
+        <p>
+          <span class="glyphicon glyphicon-book"></span> 
+          Carrera De Informatica
+        </p>
       </div>
     </div>
 
+    <script src="scripts/libs/angular.min.js"></script>
+    <script src="scripts/libs/angular-animate.min.js"></script>
+    <script src="scripts/libs/angular-sanitize.min.js"></script>
+    <script src="scripts/libs/angular-cookies.min.js"></script>
+    <script src="scripts/libs/angular-resource.min.js"></script>
+    <script src="scripts/libs/angular-route.min.js"></script>
+    <script src="scripts/libs/angular-touch.min.js"></script>
+    <script src="scripts/libs/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="scripts/libs/Chart.js"></script>
+    <script src="scripts/libs/utils.js"></script>
+    <script src="scripts/libs/angular-chart.js"></script>
+    <script src="scripts/libs/jquery-3.2.1.min.js"></script>
+    <script src="scripts/libs/bootstrap.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/registro.js"></script>
+    <script src="scripts/controllers/verificacion.js"></script>
+    <script src="scripts/controllers/seguimiento.js"></script>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
-
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <!-- endbower -->
-    <!-- endbuild -->
-
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/libs/angular.min.js"></script>
-        <script src="scripts/libs/angular-animate.min.js"></script>
-        <script src="scripts/libs/angular-sanitize.min.js"></script>
-        <script src="scripts/libs/angular-cookies.min.js"></script>
-        <script src="scripts/libs/angular-resource.min.js"></script>
-        <script src="scripts/libs/angular-route.min.js"></script>
-        <script src="scripts/libs/angular-touch.min.js"></script>
-        <script src="scripts/libs/ui-bootstrap-tpls-2.5.0.js"></script>
-        <script src="scripts/libs/Chart.js"></script>
-        <script src="scripts/libs/utils.js"></script>
-        <script src="scripts/libs/angular-chart.js"></script>
-        <script src="scripts/libs/jquery-3.2.1.min.js"></script>
-        <script src="scripts/libs/bootstrap.min.js"></script>
-
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/registro.js"></script>
-        <script src="scripts/controllers/verificacion.js"></script>
-        <script src="scripts/controllers/seguimiento.js"></script>
-        <!-- endbuild -->
 </body>
 </html>
