@@ -1,29 +1,43 @@
 'use strict';
 
 angular.module('frontendApp')
-  .controller('SeguimientoCtrl', ['$rootScope', '$scope', '$http', '$location', '$uibModal', '$log', '$document',
-                              function ($rootScope, $scope, $http, $location, $uibModal, $log, $document ) {
+  .controller('SeguimientoCtrl', [
+    '$rootScope', 
+    '$scope', 
+    '$http', 
+    '$location', 
+    '$uibModal', 
+    '$log', 
+    '$document', 
+    function (
+      $rootScope, 
+      $scope, 
+      $http, 
+      $location,
+      $uibModal, 
+      $log, 
+      $document) {
+      
+      /* ---------------------- cargado de datos -------------------------*/
+      $scope.labels = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'];
+      $scope.puntosColorFondo = ["rgba(159,204,0,1)", 
+                                 "rgba(201,204,0,0.8)", 
+                                 "rgba(89,204,0,0.8)",
+                                 "rgba(100,56,0,0.8)", 
+                                 "rgba(95,104,0,0.8)", 
+                                 "rgba(195,100,0,0.8)"];
     
-    /* ---------------------- cargado de datos -------------------------*/
+      $scope.tiemposEstimados = [51, 40, 70, 15, 60, 90];
+      $scope.tiemposReales = [51, 10, 20, 30, 60, 90];
     
-    //$rootScope.indexCaso;
-    console.log("--->> ", $rootScope.detallesCaso);
-    $scope.labels = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'];
-    $scope.puntosColorFondo = ["rgba(159,204,0,1)", "rgba(201,204,0,0.8)", "rgba(89,204,0,0.8)",
-                        "rgba(100,56,0,0.8)", "rgba(95,104,0,0.8)", "rgba(195,100,0,0.8)"];
-    
-    $scope.tiemposEstimados = [51, 40, 70, 15, 60, 90];
-    
-    // pedir datos servicio consultaTiemposCaso()
-    $scope.tiemposReales = [51, 10, 20, 30, 60, 90];
-    
-    //$scope.customResult = null;
-    
-    /* ---------------- proceso de visualizacion ------------*/
-    $scope.mostrarDatos = function(size, parentSelector) {
-      console.log("Entrando");
-      var parentElem = parentSelector ? 
-      angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+      /* ---------------- proceso de visualizacion ------------*/
+      $scope.mostrarDatos = function(size, parentSelector) {
+        console.log("Entrando");
+        var parentElem = parentSelector ? 
+                          angular.element($document[0]
+                                         .querySelector('.modal-demo ' 
+                                            + parentSelector)) : undefined;
+
       var modalInstance = $uibModal.open({
         animation: $scope.animationsEnabled,
         ariaLabelledBy: 'modal-title',
@@ -52,22 +66,10 @@ angular.module('frontendApp')
 			return Math.round(Math.random() * 50 * (Math.random() > 0.5 ? 1 : 1)) + 50;
 		};
     
-    /*$scope.tiemposEstimados[1] = $scope.randomScalingFactor();
-    $scope.tiemposEstimados[3] = $scope.randomScalingFactor();
-    $scope.tiemposEstimados[5] = $scope.randomScalingFactor();
-    
-    $scope.tiemposReales[1] = $scope.randomScalingFactor();
-    $scope.tiemposReales[2] = $scope.randomScalingFactor();
-    $scope.tiemposReales[3] = $scope.randomScalingFactor();*/
-    
-    
     $scope.onClick = function(points, evt){
       console.log('Datos: ', points, evt);
       if(points[0] != undefined){
-        //alert('Dias: ' + $scope.data[0][points[0]._index]
-              //+ '\nTiempos: CORRECTOS' );
         $scope.mostrarDatos();
-        //$scope.mostrarDatos('lg');
       }
     };
     
@@ -83,7 +85,6 @@ angular.module('frontendApp')
         fill: false,
         label: 'Tiempo Estimado (Dias)',
         borderDash: [5, 5],
-        //pointRadius: 20,
         pointHoverRadius: 25,
         pointRadius: [20, 21, 21, 21, 22, 20]
       }, {
@@ -102,8 +103,10 @@ angular.module('frontendApp')
       }
     ];
     
-    $scope.items = [$rootScope.detallesCaso.nro, $rootScope.detallesCaso.tipoCaso , 
-                    $rootScope.detallesCaso.codigoCaso, $rootScope.detallesCaso.responsable];
+    $scope.items = [$rootScope.detallesCaso.nro, 
+                    $rootScope.detallesCaso.tipoCaso , 
+                    $rootScope.detallesCaso.codigoCaso, 
+                    $rootScope.detallesCaso.responsable];
     $scope.animationsEnabled = true;
   }
 ]);
@@ -124,6 +127,3 @@ angular.module('frontendApp')
       $uibModalInstance.dismiss('cancel');
     };
 });
-
-
-
