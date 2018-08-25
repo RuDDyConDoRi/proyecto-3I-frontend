@@ -26,10 +26,10 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/registro', {
-        templateUrl: 'views/registro.html',
-        controller: 'RegistroCtrl',
-        controllerAs: 'registro'
+      .when('/listadoCasos', {
+        templateUrl: 'views/listadoCasos.html',
+        controller: 'ListadoCasosCtrl',
+        controllerAs: 'listadoCasos'
       })
       .when('/verificacion', {
         templateUrl: 'views/verificacion.html',

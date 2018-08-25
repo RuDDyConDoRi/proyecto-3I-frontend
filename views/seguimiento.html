@@ -1,4 +1,4 @@
-<div class="col-lg-12 col-sm-12">
+<div class="col-lg-12 col-sm-12 historial">
   <div class="panel panel-default">
     <div class="panel-heading">
       Caso de Corrupcion {{indexCaso+1}}
@@ -11,12 +11,15 @@
               chart-series="series" 
               chart-options="options"
               chart-dataset-override="datasetOverride" 
-              chart-click="onClick">
+              chart-click="onClick"
+              chart-hover="onHover">
       </canvas>
     </div>
   </div>
 </div>
-
+<code>
+-- {{dato_0}} --
+</code>
 <script type="text/ng-template" 
         id="modal.html">
   <div class="modal-header">

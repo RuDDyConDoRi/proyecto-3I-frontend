@@ -1,7 +1,7 @@
 <div class="">
 	<div class="page-header">
 		<div class="row">
-			<div class="col-sm-8">
+			<div class="col-sm-12">
 				<h1>Seguimiento De Casos</h1>			
 			</div>
 		</div>
@@ -39,22 +39,51 @@
 					<td>{{caso.codigoCaso}}</td>
 					<td>{{caso.responsable}}</td>
 					<td>
-						<a class="btn btn-success" 
+						<a ng-click="removeCaso($index)" 
+						   class="btn btn-success" 
+						   data-toggle="tooltip" 
+						   title="Dar de Baja">
+                      		<span class="glyphicon glyphicon-trash" 
+                      			  aria-hidden="true">
+                      			  Fiscal
+               			  	</span>
+                    	</a>
+                    	<a ng-click="removeCaso($index)" 
+						   class="btn btn-info" 
+						   data-toggle="tooltip" 
+						   title="Dar de Baja">
+                      		<span class="glyphicon glyphicon-trash" 
+                      			  aria-hidden="true">
+                      			  Policia
+               			  	</span>
+                    	</a>
+                    	<a ng-click="removeCaso($index)" 
+						   class="btn btn-primary" 
+						   data-toggle="tooltip" 
+						   title="Dar de Baja">
+                      		<span class="glyphicon glyphicon-trash" 
+                      			  aria-hidden="true">
+                      			Denunciado
+               			  	</span>
+                    	</a>
+                    	<a ng-click="removeCaso($index)" 
+						   class="btn btn-default" 
+						   data-toggle="tooltip" 
+						   title="Dar de Baja">
+                      		<span class="glyphicon glyphicon-trash" 
+                      			  aria-hidden="true">
+                      			Denunciante
+               			  	</span>
+                    	</a>
+                    	<a class="btn btn-success" 
 						   ng-click="seguimientoCaso($index)" 
 						   data-toggle="tooltip" 
 						   title="Seguimiento">
 							<span class="glyphicon glyphicon-list-alt" 
 								  aria-hidden="true">
+								  Historico
 						  	</span>
 						</a>
-						<a ng-click="removeCaso($index)" 
-						   class="btn btn-danger" 
-						   data-toggle="tooltip" 
-						   title="Dar de Baja">
-                      		<span class="glyphicon glyphicon-trash" 
-                      			  aria-hidden="true">
-               			  	</span>
-                    	</a>
 					</td>
 				</tr>			
 			</tbody>

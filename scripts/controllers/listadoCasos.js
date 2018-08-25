@@ -8,7 +8,7 @@
  * Controller of the frontendApp
  */
 angular.module('frontendApp')
-  .controller('RegistroCtrl', ['$rootScope', '$scope', '$location',
+  .controller('ListadoCasosCtrl', ['$rootScope', '$scope', '$location',
                               function ($rootScope, $scope, $location) {
     
     //$scope.casos = consulta al servicio web "listadoCasos"

@@ -24,11 +24,12 @@ angular.module('frontendApp')
                                  "rgba(201,204,0,0.8)", 
                                  "rgba(89,204,0,0.8)",
                                  "rgba(100,56,0,0.8)", 
-                                 "rgba(95,104,0,0.8)", 
+                                 "rgba(251,0,0,0.8)", 
                                  "rgba(195,100,0,0.8)"];
     
       $scope.tiemposEstimados = [51, 40, 70, 15, 60, 90];
       $scope.tiemposReales = [51, 10, 20, 30, 60, 90];
+      $scope.dato_0 = {};
     
       /* ---------------- proceso de visualizacion ------------*/
       $scope.mostrarDatos = function(size, parentSelector) {
@@ -66,12 +67,6 @@ angular.module('frontendApp')
 			return Math.round(Math.random() * 50 * (Math.random() > 0.5 ? 1 : 1)) + 50;
 		};
     
-    $scope.onClick = function(points, evt){
-      console.log('Datos: ', points, evt);
-      if(points[0] != undefined){
-        $scope.mostrarDatos();
-      }
-    };
     
     $scope.data = [$scope.tiemposEstimados, $scope.tiemposReales];
     $scope.datasetOverride = [
@@ -102,6 +97,94 @@ angular.module('frontendApp')
         pointRadius: 22
       }
     ];
+
+    $scope.options = {
+      //responsive: true,
+      /*scales: {
+        xAxes: [{
+          display: true,
+          ticks: {
+            max: 125,
+            min: -125,
+            stepSize: 10
+          }
+        }],
+        yAxes: [{
+          display: true,
+          ticks: {
+            max: 125,
+            min: -125,
+            stepSize: 10
+          }
+        }]
+      },*/
+      tooltips: {
+        mode: 'index',
+        callbacks: {
+          // Use the footer callback to display the sum of the items showing in the tooltip
+          footer: function(tooltipItems, data) {
+            var sum = 0;
+            var estado = false
+            tooltipItems.forEach(function(tooltipItem) {
+              sum += data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+            });
+            return 'Suma: ' + sum;
+          }/*,
+          header: function(tooltipItems, data) {
+            var sum = 0;
+            var estado = false;
+            var numero = 0;
+            tooltipItems.forEach(function(tooltipItem) {
+              data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]>0?estado=true:estado=false 
+            });
+            return 'Estado: ' + estado ;
+          }*/
+        },
+        footerFontStyle: 'normal'
+      }/*,
+      hover: {
+          mode: 'index',
+          intersect: true,
+          callbacks: {
+            footer: function(tooltipItems, data){
+              var datooos = '';
+              tooltipItems.forEach(function(tooltipItem) {
+                datooos = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]
+              });
+              return 'Dato: ' + datooos;
+            }
+          }
+        }*/
+    };
+
+    $scope.onClick = function(points, evt){
+      console.log('Datos: ', points[0].value);
+      $scope.dato_0 = points[0].value;
+      var firstPoint = points[0];
+      console.log('Datos-evento: ',  firstPoint._index);
+      console.log('Datos-evento: ',  firstPoint._datasetIndex);
+      console.log(points[0]._view);
+      
+      //
+      //var activePoints = getElementsAtEventForMode(evt, 'point', $scope.options);
+        
+        var label = $scope.labels[firstPoint._index];
+        var value = $scope.data[firstPoint._datasetIndex][firstPoint._index];
+        console.log('test>> ', value);
+        alert(label + ": " + value);
+      //alert($scope.datasetOverride[0].points.indexOf(points[0]))
+      if(points[0] != undefined){
+        $scope.mostrarDatos();
+      }
+    };
+
+    $scope.onHover = function (points) {
+      if (points.length > 0) {
+        console.log('Point', points[0].value);
+      } else {
+        console.log('No point');
+      }
+    };
     
     $scope.items = [$rootScope.detallesCaso.nro, 
                     $rootScope.detallesCaso.tipoCaso , 
